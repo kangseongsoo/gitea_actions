@@ -1,0 +1,16 @@
+1. gitea 서버 구축
+2. 레포지터리 생성 및 푸쉬
+3. gitea action runner 설치
+'''bash
+# cd /usr/local/bin/
+# curl -L -o act_runner https://gitea.com/gitea/act_runner/releases/download/v0.2.10/act_runner-0.2.10-linux-amd64
+# chmod +x act_runner
+# mkdir -p /etc/act_runner
+# /usr/local/bin/act_runner generate-config > /etc/act_runner/config.yaml
+# mkdir /var/lib/act_runner
+# mv /usr/local/bin/.runner /var/lib/act_runner/ # 저밑에 언제 생성됐는지 모르겠는데 나중에 확인필요
+
+'''
+4. gitea 레포지터리에서 토큰키 복사 한뒤 등록록
+# /usr/local/bin/act_runner register 
+5. Runner를 systemd 서비스로 등록

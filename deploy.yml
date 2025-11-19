@@ -1,0 +1,18 @@
+#.gitea/workflows/deploy.yml
+name: Deploy Milvus Server
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: [runner]
+
+    steps:
+      - name: Deploy to server
+        run: |
+          echo "[INFO] Running deploy script..."
+          TAG=${GITHUB_REF#refs/tags/}
+          /usr/local/bin/deploy_milvus.sh "$TAG"
