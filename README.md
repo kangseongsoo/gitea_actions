@@ -64,7 +64,7 @@ git push origin v1.0.1
 | 소스 코드 git repo | Gitea self-hosted                 |
 
 ## 6. 디렉터리 구조
-'''
+```
 /home/milvus_server
  ├── .gitea/workflows/deploy.yml    (레포지터리에 업로드 되어있어야함)
  ├── app/
@@ -76,7 +76,7 @@ git push origin v1.0.1
  └── bin/activate
 
 /usr/local/bin/deploy_milvus.sh
-'''
+```
 ## 7. systemctl 구성
 milvus_server.service
 
@@ -94,10 +94,10 @@ milvus_server.service
 ## 10. Runner 설치 흐름
 운영 서버에서 설치:
 https://gitea.com/gitea/act_runner/releases 바이너리 다운가능
-'''
+```
 /usr/local/bin/act_runner generate-config > config.yaml
 /usr/local/bin/act_runner register 
-'''
+```
 systemctl 등록 및 실행
 Runner가 활성화되면:
  - Gitea Actions workflow 실행
@@ -119,13 +119,13 @@ Runner가 활성화되면:
 
 ## 이슈
 1. /etc/act_runner/config.yaml label 설정이 덮어씌워짐, 설정 변경 
-'''
+```
 # 수정함함
   labels:
   - runner
   - linux
   - x86_64
-'''
+```
 2. deploy.yml uses: actions/checkout@v3 도커기반실행모드에서만 쓸수있어서 제거
 
 
