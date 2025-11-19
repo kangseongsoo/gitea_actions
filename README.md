@@ -97,8 +97,9 @@ https://gitea.com/gitea/act_runner/releases 바이너리 다운가능
 ```
 /usr/local/bin/act_runner generate-config > config.yaml
 /usr/local/bin/act_runner register 
+# /usr/local/bin/act_runner register 할때는 레포지터리에서 토큰값을 받아와야함
 ```
- - /usr/local/bin/act_runner register 할때는 레포지터리에서 토큰값을 받아와야함
+
 systemctl 등록 및 실행
 Runner가 활성화되면:
  - Gitea Actions workflow 실행
